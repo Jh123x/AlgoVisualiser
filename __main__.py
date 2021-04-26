@@ -83,9 +83,44 @@ def bfs(source: tuple, target: tuple, visited: Grid):
     yield target
 
 
+def dfs(source: tuple, target: tuple, visited: Grid):
+    """Dijkstra's Algorithm"""
+    arr = (
+        (0, 1),
+        (0, -1),
+        (1, 0),
+        (-1, 0)
+    )
+
+    stack = [source]
+
+    while len(stack):
+        x, y = stack.pop()
+        curr = (x, y)
+
+        if not visited.in_range(*curr) or visited.is_blocked(*curr):
+            continue
+
+        if (x, y) == target:
+            break
+
+        for x, y in arr:
+            x_coord = curr[0] + x
+            y_coord = curr[1] + y
+            stack.append((x_coord, y_coord))
+
+        if source != curr:
+            visited.mark_visited(*curr)
+
+        yield curr
+
+    yield target
+
+
 if __name__ == '__main__':
 
     # Run the visualisation
     # game = Animate(Astar, ((0, 0), (80, 75)), dim = (100, 100), resolution= (1080,1080), fps =144)
     # game = Animate(bfs, ((0, 0), (80, 75)), dim=(100, 100), resolution=(1080, 1080), fps=144)
+    game = Animate(dfs, ((0, 0), (80, 75)), dim=(100, 100), resolution=(1080, 1080), fps=144)
     game.run()
