@@ -5,9 +5,7 @@ from visualiser.Animation.Blocks.Grid import Grid
 
 
 def Astar(source: tuple, target: tuple, visited: Grid):
-    """Modify this algorithm to whatever you want
-        yield at each step
-    """
+    """Astar"""
     arr = (
         (0, 1),
         (0, -1),
@@ -47,7 +45,7 @@ def Astar(source: tuple, target: tuple, visited: Grid):
 
 
 def bfs(source: tuple, target: tuple, visited: Grid):
-    """Dijkstra's Algorithm"""
+    """BFS"""
     arr = (
         (0, 1),
         (0, -1),
@@ -84,7 +82,7 @@ def bfs(source: tuple, target: tuple, visited: Grid):
 
 
 def dfs(source: tuple, target: tuple, visited: Grid):
-    """Dijkstra's Algorithm"""
+    """DFS"""
     arr = (
         (0, 1),
         (0, -1),
