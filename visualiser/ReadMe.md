@@ -6,8 +6,14 @@
 
 ## Quick Start
 1. Go to `__main__.py` file
-2. Create a new function
-3. Pass the function into the `game = Animate(<Your Function>, (<source coord>, <target coord>), dim = <(x,y) dimention of grid>, resolution = <resolution of the window>)`
+1. Create a new function 
+1. Pass the function into the `game = Animate(<Your Function>, (<source coord>, <target coord>), dim = <(x,y) dimention of grid>, resolution = <resolution of the window>)`
+
+
+## Restriction on functions
+1. Whenever a node is visited please yield the node coordinates for the UI
+1. Make use of the visited array that will be passed to the function
+1. Function signature must be `(*args, visited)` where args are any arguments you passed in yourself. Look at the example in `__main__.py` for more information
 
 
 ## Instructions when using
@@ -23,3 +29,8 @@
 
 ## Know Bugs
 1. Unable to work with recursive functions
+
+
+## To do
+1. Add backtracking (Increases complexity for the user implementing the function)
+1. Better UI (I'm not really a UI Guy thou ><)
