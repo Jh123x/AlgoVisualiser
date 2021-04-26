@@ -7,7 +7,7 @@
 ## Quick Start
 1. Go to `__main__.py` file
 2. Create a new function
-3. Pass the function into the `game = Animate(Your Function, (source, target), dim = number of squares, resolution= resolution)`
+3. Pass the function into the `game = Animate(<Your Function>, (<source coord>, <target coord>), dim = <(x,y) dimention of grid>, resolution = <resolution of the window>)`
 
 
 ## Instructions when using
